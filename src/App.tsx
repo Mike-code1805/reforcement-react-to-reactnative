@@ -1,6 +1,4 @@
-import React from 'react';
-import { Counter, CounterWithHook, Login, Users } from './components';
-import { BasicTypes, LiteralObjects, Functions } from './typescript';
+import { Forms } from './components';
 
 const App = () => {
   return (
@@ -12,7 +10,8 @@ const App = () => {
       {/* <Counter /> */}
       {/* <CounterWithHook /> */}
       {/* <Login /> */}
-      <Users />
+      {/* <Users /> */}
+      <Forms />
     </div>
   );
 };

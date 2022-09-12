@@ -5,19 +5,19 @@ import { requestResponse } from '../api/requestResponse';
 export const useUsers = () => {
   const [users, setUsers] = useState<User[]>([]);
 
-  const paginaRef = useRef(1);
+  const pageRef = useRef(1);
 
   const chargeUsers = async () => {
     const resp = await requestResponse.get<ReqResListado>('/users', {
       params: {
-        page: paginaRef.current,
+        page: pageRef.current,
       },
     });
 
     if (resp.data.data.length > 0) {
       setUsers(resp.data.data);
     } else {
-      paginaRef.current--;
+      pageRef.current--;
       alert('There is no more users');
     }
   };
@@ -27,13 +27,13 @@ export const useUsers = () => {
   }, []);
 
   const nextPage = () => {
-    paginaRef.current++;
+    pageRef.current++;
     chargeUsers();
   };
 
   const previousPage = () => {
-    if (paginaRef.current > 1) {
-      paginaRef.current--;
+    if (pageRef.current > 1) {
+      pageRef.current--;
       chargeUsers();
     }
   };

@@ -18,8 +18,7 @@ export const Users = () => {
           />
         </td>
         <td>
-          {' '}
-          {first_name} {last_name}{' '}
+          {first_name} {last_name}
         </td>
         <td> {email}</td>
       </tr>
